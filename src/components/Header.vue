@@ -4,7 +4,25 @@ import { HEADER_LINKS } from "@/data";
 
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-vue-next";
-import { Heart, ShoppingCart } from "lucide-vue-next";
+import { Heart, ShoppingCart, AlignJustify } from "lucide-vue-next";
+
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import MobileMenuView from "./MobileMenuView.vue";
+import { ref } from "vue";
+
+const open = ref(false);
+
+function closeSheet() {
+  open.value = false;
+}
 </script>
 
 <template>
@@ -18,7 +36,7 @@ import { Heart, ShoppingCart } from "lucide-vue-next";
       </div>
 
       <!-- ====== LINKS ======= -->
-      <div class="flex items-center space-x-5">
+      <div class="hidden lg:flex items-center space-x-5">
         <ul v-for="link in HEADER_LINKS" :key="link.name">
           <li :class="{ 'router-link-active': $route.path === link.path }">
             <router-link :to="link.path">
@@ -28,7 +46,7 @@ import { Heart, ShoppingCart } from "lucide-vue-next";
         </ul>
       </div>
 
-      <div class="flex items-center space-x-5">
+      <div class="hidden lg:flex items-center space-x-5">
         <div class="relative w-full max-w-sm items-center">
           <Input
             id="search"
@@ -45,6 +63,16 @@ import { Heart, ShoppingCart } from "lucide-vue-next";
         <Heart class="size-8" />
         <ShoppingCart class="size-8" />
       </div>
+
+      <Sheet :open="open" :onOpenChange="(value: boolean) => open = !value">
+        <SheetTrigger as-child>
+          <AlignJustify class="lg:hidden cursor-pointer" @click="open = true" />
+        </SheetTrigger>
+
+        <SheetContent>
+          <MobileMenuView :open="open" :closeSheet="closeSheet" />
+        </SheetContent>
+      </Sheet>
     </section>
   </header>
 </template>
