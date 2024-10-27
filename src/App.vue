@@ -4,6 +4,7 @@ import { RouterLink, RouterView, useRoute } from "vue-router";
 import Header from "./components/Header.vue";
 import "@/styles/main.css";
 import { ref, watch } from "vue";
+import Footer from "./components/Footer.vue";
 
 const route = useRoute();
 const shouldShowHeader = ref(true);
@@ -25,4 +26,5 @@ watch(
   <main class="container">
     <RouterView />
   </main>
+  <Footer />
 </template>
