@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { RouterView, useRoute } from "vue-router";
 
-import Header from "./components/header.vue";
 import "@/styles/main.css";
 import { ref, watch } from "vue";
+import Header from "./components/header.vue";
 import Footer from "./components/footer.vue";
 
 const route = useRoute();
