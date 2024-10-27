@@ -7,7 +7,7 @@ import { Search } from "lucide-vue-next";
 import { Heart, ShoppingCart, AlignJustify } from "lucide-vue-next";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import MobileMenuView from "./MobileMenuView.vue";
+import MobileMenuView from "./mobile-menu.vue";
 import { ref } from "vue";
 
 const open = ref(false);

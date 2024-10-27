@@ -4,7 +4,7 @@ import { ACCOUNT, QUICK_LINKS } from "@/data/footer-links";
 </script>
 
 <template>
-  <footer class="bg-black mt-10">
+  <footer class="bg-black mt-[100px]">
     <main
       class="container text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-start py-10 gap-7"
     >

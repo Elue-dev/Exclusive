@@ -1,18 +1,18 @@
-const animate = require("tailwindcss-animate")
+const animate = require("tailwindcss-animate");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   safelist: ["dark"],
   prefix: "",
-  
+
   content: [
-    './pages/**/*.{ts,tsx,vue}',
-    './components/**/*.{ts,tsx,vue}',
-    './app/**/*.{ts,tsx,vue}',
-    './src/**/*.{ts,tsx,vue}',
-	],
-  
+    "./pages/**/*.{ts,tsx,vue}",
+    "./components/**/*.{ts,tsx,vue}",
+    "./app/**/*.{ts,tsx,vue}",
+    "./src/**/*.{ts,tsx,vue}",
+  ],
+
   theme: {
     container: {
       center: true,
@@ -23,6 +23,12 @@ module.exports = {
     },
     extend: {
       colors: {
+        primaryRed: "#DB4444",
+        primaryYellow: "#FFAD33",
+        "ex-gray": {
+          200: "#F5F5F5",
+          300: "#7D8184",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -74,10 +80,10 @@ module.exports = {
         },
         "collapsible-down": {
           from: { height: 0 },
-          to: { height: 'var(--radix-collapsible-content-height)' },
+          to: { height: "var(--radix-collapsible-content-height)" },
         },
         "collapsible-up": {
-          from: { height: 'var(--radix-collapsible-content-height)' },
+          from: { height: "var(--radix-collapsible-content-height)" },
           to: { height: 0 },
         },
       },
@@ -90,4 +96,4 @@ module.exports = {
     },
   },
   plugins: [animate],
-}
+};
