@@ -44,7 +44,7 @@ import { ACCOUNT, QUICK_LINKS } from "@/data/footer-links";
       </div>
     </main>
 
-    <div class="text-center pb-5 border-t border-t-neutral-800">
+    <div class="text-center pb-8 border-t border-t-neutral-800">
       <p class="text-neutral-700 mt-4">
         &copy; Copyright Exclusive Inc. {{ new Date().getFullYear() }}. All
         right reserved

@@ -26,6 +26,13 @@ a {
   margin: auto;
 }
 
+@media (max-width: 600px) {
+  .container {
+    max-width: 1800px;
+    width: 100%;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
