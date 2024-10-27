@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink, RouterView, useRoute } from "vue-router";
+import { RouterView, useRoute } from "vue-router";
 
 import Header from "./components/header.vue";
 import "@/styles/main.css";

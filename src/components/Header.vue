@@ -54,7 +54,7 @@ function closeSheet() {
           <Heart class="size-6 md:size-8 cursor-pointer" />
           <ShoppingCart class="size-6 md:size-8 cursor-pointer" />
 
-          <Sheet :open="open" :onOpenChange="(value: boolean) => open = !value">
+          <Sheet :open="open">
             <SheetTrigger as-child>
               <AlignJustify
                 class="lg:hidden cursor-pointer size-6 md:size-8"
