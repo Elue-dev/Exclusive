@@ -12,7 +12,7 @@ export const HEADER_LINKS = [
     path: "/about",
   },
   {
-    name: "Signup",
+    name: "Sign Up",
     path: "/auth/sign-up",
   },
 ];

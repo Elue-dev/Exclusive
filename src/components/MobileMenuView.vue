@@ -15,7 +15,7 @@ const props = defineProps<{
   <section>
     <div class="mb-4 flex justify-between items-center">
       <router-link to="/">
-        <img :src="Logo" alt="Exclusive" />
+        <img :src="Logo" alt="Exclusive" class="logo" />
       </router-link>
 
       <SquareX
@@ -43,5 +43,8 @@ const props = defineProps<{
 .router-link-active {
   border-bottom: 1px solid #c0c0c0;
   transition: border 1s ease;
+}
+.logo {
+  border-bottom: 0 !important;
 }
 </style>

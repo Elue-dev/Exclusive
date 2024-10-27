@@ -6,15 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-vue-next";
 import { Heart, ShoppingCart, AlignJustify } from "lucide-vue-next";
 
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import MobileMenuView from "./MobileMenuView.vue";
 import { ref } from "vue";
 
@@ -28,14 +20,12 @@ function closeSheet() {
 <template>
   <header class="container py-4">
     <section class="flex justify-between items-center">
-      <!-- ====== LOGO ======= -->
       <div>
         <router-link to="/">
           <img :src="Logo" alt="Exclusive" />
         </router-link>
       </div>
 
-      <!-- ====== LINKS ======= -->
       <div class="hidden lg:flex items-center space-x-5">
         <ul v-for="link in HEADER_LINKS" :key="link.name">
           <li :class="{ 'router-link-active': $route.path === link.path }">
@@ -46,8 +36,8 @@ function closeSheet() {
         </ul>
       </div>
 
-      <div class="hidden lg:flex items-center space-x-5">
-        <div class="relative w-full max-w-sm items-center">
+      <div class="flex items-center space-x-5">
+        <div class="relative w-full max-w-sm items-center hidden lg:block">
           <Input
             id="search"
             type="text"
@@ -60,19 +50,22 @@ function closeSheet() {
             <Search class="size-4 text-muted-foreground" />
           </span>
         </div>
-        <Heart class="size-8" />
-        <ShoppingCart class="size-8" />
+        <Heart class="size-6 md:size-8 cursor-pointer" />
+        <ShoppingCart class="size-6 md:size-8 cursor-pointer" />
+
+        <Sheet :open="open" :onOpenChange="(value: boolean) => open = !value">
+          <SheetTrigger as-child>
+            <AlignJustify
+              class="lg:hidden cursor-pointer size-6 md:size-8"
+              @click="open = true"
+            />
+          </SheetTrigger>
+
+          <SheetContent>
+            <MobileMenuView :open="open" :closeSheet="closeSheet" />
+          </SheetContent>
+        </Sheet>
       </div>
-
-      <Sheet :open="open" :onOpenChange="(value: boolean) => open = !value">
-        <SheetTrigger as-child>
-          <AlignJustify class="lg:hidden cursor-pointer" @click="open = true" />
-        </SheetTrigger>
-
-        <SheetContent>
-          <MobileMenuView :open="open" :closeSheet="closeSheet" />
-        </SheetContent>
-      </Sheet>
     </section>
   </header>
 </template>
